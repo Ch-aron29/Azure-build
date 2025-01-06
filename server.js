@@ -3,7 +3,7 @@ const app = express();
 
 // Ruta básica
 app.get('/', (req, res) => {
-  res.send('¡Aplicación desplegada en Azure con éxito!');
+  res.send('¡Aplicación desplegada en Azure r442423 con éxito!');
 });
 
 // Puerto
