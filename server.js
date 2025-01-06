@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
 
-// Ruta para Health Check
-app.get('/health', (req, res) => {
-  res.status(200).send('OK');
+// Ruta básica
+app.get('/', (req, res) => {
+  res.send('¡Aplicación desplegada en Azure con éxito!');
 });
 
-// Puerto proporcionado por Azure
+// Puerto
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+  console.log(`Servidor corriendo en el nuevo puerto ${PORT}`);
 });
