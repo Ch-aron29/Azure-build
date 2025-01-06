@@ -1,11 +1,13 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, Azure DevOps!');
+// Ruta básica
+app.get('/', (req, res) => {
+  res.send('¡Aplicación desplegada en Azure con éxito!');
 });
 
-server.listen(3000, () => {
-  console.log('Server running on port 3000');
+// Puerto
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
